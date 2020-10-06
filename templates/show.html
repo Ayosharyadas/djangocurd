@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farmer Records</title>
+
+
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Farmer ID</th>
+        <th>Farmer Name</th>
+        <th>Farmer Email</th>
+        <th>Farmer Contact</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for Farmer1 in farms %}
+    <tr>
+        <td>{{ Farmer1.eid }}</td>
+        <td>{{ Farmer1.ename }}</td>
+        <td>{{ Farmer1.eemail }}</td>
+        <td>{{ Farmer1.econtact }}</td>
+        <td>
+            <a href="/edit/{{ Farmer1.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/delete/{{ Farmer1.id }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="/farm" class="btn btn-primary">Add New Record</a></center>
+
+</body>
+</html>
